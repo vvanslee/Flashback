@@ -39,8 +39,8 @@ $(document).ready(function() {
 		var musicDiv = $("<img>");
 
 		musicDiv.attr("src", musicURL);
-		musicDiv.attr("alt", "Popular Music")
-		musicDiv.attr("id", "musicIcon")
+		musicDiv.attr("alt", "Popular Music");
+		musicDiv.attr("id", "musicIcon");
 
 		$("#icons").append(musicDiv);
 	// })
@@ -56,12 +56,12 @@ $(document).ready(function() {
 	// .done(function(response) {
 
 		// var fashionURL = response.something.something;
-		var fashionURL = "http://www.alfano.com/wp-content/uploads/2014/04/opus-portfolio-placeholder-300x300.png"
+		var fashionURL = "http://www.alfano.com/wp-content/uploads/2014/04/opus-portfolio-placeholder-300x300.png";
 		var fashionDiv = $("<img>");
 
 		fashionDiv.attr("src", fashionURL);
-		fashionDiv.attr("alt", "Popular Fashion")
-		fashionDiv.attr("id", "fashionIcon")
+		fashionDiv.attr("alt", "Popular Fashion");
+		fashionDiv.attr("id", "fashionIcon");
 
 		$("#icons").append(fashionDiv);
 	// })
@@ -77,27 +77,72 @@ $(document).ready(function() {
 	// .done(function(response) {
 
 	// 	var foodURL = response.something.something;
-		var foodURL = "http://www.alfano.com/wp-content/uploads/2014/04/opus-portfolio-placeholder-300x300.png"
+		var foodURL = "http://www.alfano.com/wp-content/uploads/2014/04/opus-portfolio-placeholder-300x300.png";
 		var foodDiv = $("<img>");
 
 		foodDiv.attr("src", foodURL);
-		foodDiv.attr("alt", "Popular Music")
-		foodDiv.attr("id", "foodIcon")
+		foodDiv.attr("alt", "Popular Music");
+		foodDiv.attr("id", "foodIcon");
 
 		$("#icons").append(foodDiv);
 	// })
 
-	// open next page
+	// ----------------------------------------------
+	//         ON TO THE NEXT THANG
+	// ----------------------------------------------
+
+	var genreArry = [];
+	var fashionArry = [];
+	var foodArry = [];
+
+	// on click opens music genres page
+	// ** BIRTHDAY WONT SHOW UP...lauren and I couldnt figure it out **
 	$("#musicIcon").on("click", function() {
 		console.log("music was clicked af");
+
+		$("form").hide();
+		$("#results-page").hide();
+		$("#genres-page").show();
+		$("#birthday-display").html(birthday);
+
+		for (var i = 0; i < 6; i++) {
+
+			// var genreName = "SOMETHING DYNAMIC FROM API?"
+			var genreName = "genreID";
+			// var genreURL = response.something.something;
+			var genreURL = "http://www.alfano.com/wp-content/uploads/2014/04/opus-portfolio-placeholder-300x300.png";
+			var genreDiv = $("<img>");
+
+			genreDiv.attr("src", genreURL);
+			genreDiv.attr("alt", "Genre");
+			genreDiv.attr("id", genreName);
+
+			$("#musicGenres").append(genreDiv);
+
+			// add genreName to genreArry
+			genreArry.push(genreName);
+		}
+
+		//BUTTON TO RETURN TO RESULTS PAGE?
+
 	});
 
+	// on click opens fashion grid page
 	$("#fashionIcon").on("click", function() {
 		console.log("fashion was clicked af");
+
+		// FASHION GRID PAGE GOES HERE
+		// RETURN TO RESULTS PAGE?
+
 	});
 
+
+	// on click opens food grid page
 	$("#foodIcon").on("click", function() {
 		console.log("food was clicked af");
+
+		// RECIPE GRID PAGE GOES HERE
+		// RETURN TO RESULTS PAGE?
 	});
 
 //-----------------------------------------
