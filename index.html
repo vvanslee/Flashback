@@ -2,32 +2,37 @@
 <html>
 <head>
 	<title>Birthday party app</title>
-	<!-- 
+<!-- 	 
 	Reset
-	Call CSS 
-	Style frameworks
-	Set Javascript
-	Set AJAX
-	Firebase
-	Set Viewport-->
-<!-- 	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-  		<link rel="stylesheet" type="text/css" href="assets/css/style.css"> -->
+	Call CSS  -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<!-- Style frameworks
+	Set Javascript -->
+	<script type="text/javascript" src="assets/javascript/birthday.js"></script>
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+	<!-- Set AJAX
+	Firebase-->
+	
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   	<script src="assets/javascript/birthday.js"></script>
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
 <body>
+<img src="assets/images/partyhat.png" class ="toplogo" alt="logo" hidden>
+<h2><b>BIRTHDAY PARTY APP</b></h2>
 
-<h2><b>Birthday Party App</b></h2>
 
 <form>
 	<center>
 		<div id="modal-container" style="height:30px">
 			<div id="error-modal"></div>
 		</div>
+		<img src="assets/images/partyhat.png" class ="logo" alt="logo">
+		<br>
 		<input type="date" name="birthday" min="1850-01-01" max="2017-06-30"><br>
-	  	Enter Birthday<br>
+	  	ENTER   BIRTHDAY<br>
 	  	<input type="submit" value="Submit">
   	</center>
 </form>
