@@ -1,0 +1,20 @@
+body {
+	background-color: #221f23;
+	color: #ffffff;
+	font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
+form {
+	font-size: 20px;
+}
+
+.logo {
+	width: 150px;
+
+}
+
+.toplogo {
+	width: 80px;
+}
+

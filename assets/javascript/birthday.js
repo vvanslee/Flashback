@@ -19,6 +19,7 @@ $(document).ready(function() {
 			$("form").hide();
 			$("#results-page").show();
 			$(".birthday-display").html(birthday);
+			$(".toplogo").show();
 		}
 
 	});
