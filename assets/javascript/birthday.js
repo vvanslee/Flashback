@@ -11,11 +11,14 @@ $(document).ready(function() {
 		console.log ("birthday = " + birthday); 
 
 		if (birthday === "" || birthday === undefined || birthday === null) {
-			alert("Please enter a valid birth date.");
+			$("#error-modal").show();
+			$("#error-modal").html("Please enter a valid birth date.");
+			$("#error-modal").fadeOut(3000);
+
 		} else {
 			$("form").hide();
 			$("#results-page").show();
-			$("#birthday-display").html(birthday);
+			$(".birthday-display").html(birthday);
 		}
 
 	});
@@ -103,7 +106,7 @@ $(document).ready(function() {
 		$("form").hide();
 		$("#results-page").hide();
 		$("#genres-page").show();
-		$("#birthday-display").html(birthday);
+		$(".birthday-display").html(birthday);
 
 		for (var i = 0; i < 6; i++) {
 

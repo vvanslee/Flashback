@@ -22,15 +22,19 @@
 <h2><b>Birthday Party App</b></h2>
 
 <form>
-	<center><input type="date" name="birthday" min="1850-01-01" max="2017-06-30"><br>
-  	Enter Birthday<br>
-  	<input type="submit" value="Submit"></center>
+	<center>
+		<div id="modal-container" style="height:30px">
+			<div id="error-modal"></div>
+		</div>
+		<input type="date" name="birthday" min="1850-01-01" max="2017-06-30"><br>
+	  	Enter Birthday<br>
+	  	<input type="submit" value="Submit">
+  	</center>
 </form>
-
 
 <div id="results-page" hidden>
 
-	<p id="birthday-display"></p>
+	<p class="birthday-display"></p>
 
 	<div id="icons"></div>
 	
@@ -43,7 +47,7 @@
 
 <div id="genres-page" hidden>
 
-	<p id="birthday-display"></p>
+	<p class="birthday-display"></p>
 
 	<div id="musicGenres"></div>
 
