@@ -95,7 +95,7 @@ $(document).ready(function() {
 	//                    NEXT
 	// ----------------------------------------------
 
-	var genreArry = [];
+	var musicArry = [];
 	var fashionArry = [];
 	var foodArry = [];
 
@@ -104,26 +104,28 @@ $(document).ready(function() {
 
 		$("form").hide();
 		$("#results-page").hide();
-		$("#genres-page").show();
+		$("#music-page").show();
 		$(".birthday-display").html(birthday);
 
-		for (var i = 0; i < 6; i++) {
+		// var musicName = "SOMETHING DYNAMIC FROM API?"
+		var musicName = "musicID";
+		// var musicURL = response.something.something;
 
-			// var genreName = "SOMETHING DYNAMIC FROM API?"
-			var genreName = "genreID";
-			// var genreURL = response.something.something;
-			var genreURL = "http://www.alfano.com/wp-content/uploads/2014/04/opus-portfolio-placeholder-300x300.png";
-			var genreDiv = $("<img>");
+		var playlistDiv = $("<div>DYNAMICALLY GENERATED PLAYLIST</div>");
 
-			genreDiv.attr("src", genreURL);
-			genreDiv.attr("alt", "Genre");
-			genreDiv.attr("id", genreName);
+		playlistDiv.attr("id", "musicPlaylist");
 
-			$("#musicGenres").append(genreDiv);
+		var musicDiv = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/XQu8TTBmGhA' frameborder='0' allowfullscreen></iframe>");
 
-			// add genreName to genreArry
-			genreArry.push(genreName);
-		}
+		// musicDiv.attr("src", musicURL);
+		musicDiv.attr("alt", "Music Video");
+		musicDiv.attr("id", musicName);
+
+		$("#popularMusic").append(playlistDiv);
+		$("#popularMusic").append(musicDiv);
+
+		// add genreName to genreArry
+		musicArry.push(musicName);
 
 		//BUTTON TO RETURN TO RESULTS PAGE?
 
@@ -135,7 +137,7 @@ $(document).ready(function() {
 
 		$("form").hide();
 		$("#results-page").hide();
-		$("#genres-page").hide();
+		$("#music-page").hide();
 		$("#fashions-page").show();
 		$(".birthday-display").html(birthday);
 
@@ -165,7 +167,7 @@ $(document).ready(function() {
 
 		$("form").hide();
 		$("#results-page").hide();
-		$("#genres-page").hide();
+		$("#music-page").hide();
 		$("#fashions-page").hide();
 		$("#foods-page").show();
 		$(".birthday-display").html(birthday);
