@@ -131,7 +131,7 @@ $(document).ready(function() {
 
 	// on click opens fashion grid page
 	$("#fashionIcon").on("click", function() {
-		console.log("fashion was clicked af");
+		console.log("fashion was clicked");
 
 		$("form").hide();
 		$("#results-page").hide();
@@ -139,23 +139,20 @@ $(document).ready(function() {
 		$("#fashions-page").show();
 		$(".birthday-display").html(birthday);
 
-		for (var i = 0; i < 6; i++) {
 
-			// var fashionName = "SOMETHING DYNAMIC FROM API?"
-			var fashionName = "fashionID";
-			// var genreURL = response.something.something;
-			var fashionURL = "http://www.alfano.com/wp-content/uploads/2014/04/opus-portfolio-placeholder-300x300.png";
-			var fashionDiv = $("<img>");
+		// var fashionName = "SOMETHING DYNAMIC FROM API?"
+		var fashionName = "fashionID";
+		// var genreURL = response.something.something;
+		var fashionDiv = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/XQu8TTBmGhA' frameborder='0' allowfullscreen></iframe>");
 
-			fashionDiv.attr("src", fashionURL);
-			fashionDiv.attr("alt", "Fashion");
-			fashionDiv.attr("id", fashionName);
+		// fashionDiv.attr("src", fashionURL);
+		fashionDiv.attr("alt", "Fashion Video");
+		fashionDiv.attr("id", fashionName);
 
-			$("#fashionTrends").append(fashionDiv);
+		$("#fashionTrends").append(fashionDiv);
 
-			// add genreName to genreArry
-			fashionArry.push(fashionName);
-		}
+		// add genreName to genreArry
+		fashionArry.push(fashionName);
 
 		//BUTTON TO RETURN TO RESULTS PAGE?
 
@@ -164,7 +161,7 @@ $(document).ready(function() {
 
 	// on click opens food grid page
 	$("#foodIcon").on("click", function() {
-		console.log("food was clicked af");
+		console.log("food was clicked");
 
 		$("form").hide();
 		$("#results-page").hide();
@@ -173,23 +170,19 @@ $(document).ready(function() {
 		$("#foods-page").show();
 		$(".birthday-display").html(birthday);
 
-		for (var i = 0; i < 6; i++) {
+		// var fashionName = "SOMETHING DYNAMIC FROM API?"
+		var foodName = "foodID";
+		// var genreURL = response.something.something;
+		var foodDiv = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/XQu8TTBmGhA' frameborder='0' allowfullscreen></iframe>");
 
-			// var fashionName = "SOMETHING DYNAMIC FROM API?"
-			var foodName = "foodID";
-			// var genreURL = response.something.something;
-			var foodURL = "http://www.alfano.com/wp-content/uploads/2014/04/opus-portfolio-placeholder-300x300.png";
-			var foodDiv = $("<img>");
+		// fashionDiv.attr("src", fashionURL);
+		foodDiv.attr("alt", "Food Video");
+		foodDiv.attr("id", foodName);
 
-			foodDiv.attr("src", foodURL);
-			foodDiv.attr("alt", "Food");
-			foodDiv.attr("id", foodName);
+		$("#popularFoods").append(foodDiv);
 
-			$("#popularFoods").append(foodDiv);
-
-			// add genreName to genreArry
-			foodArry.push(foodName);
-		}
+		// add genreName to genreArry
+		foodArry.push(foodName);
 
 		//BUTTON TO RETURN TO RESULTS PAGE?
 	});
