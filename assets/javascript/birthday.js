@@ -92,7 +92,7 @@ $(document).ready(function() {
 	// })
 
 	// ----------------------------------------------
-	//         ON TO THE NEXT THANG
+	//                    NEXT
 	// ----------------------------------------------
 
 	var genreArry = [];
@@ -100,9 +100,7 @@ $(document).ready(function() {
 	var foodArry = [];
 
 	// on click opens music genres page
-	// ** BIRTHDAY WONT SHOW UP...lauren and I couldnt figure it out **
 	$("#musicIcon").on("click", function() {
-		console.log("music was clicked af");
 
 		$("form").hide();
 		$("#results-page").hide();
@@ -134,6 +132,32 @@ $(document).ready(function() {
 	// on click opens fashion grid page
 	$("#fashionIcon").on("click", function() {
 		console.log("fashion was clicked af");
+
+		$("form").hide();
+		$("#results-page").hide();
+		$("#genres-page").hide();
+		$("#fashions-page").show();
+		$(".birthday-display").html(birthday);
+
+		for (var i = 0; i < 6; i++) {
+
+			// var fashionName = "SOMETHING DYNAMIC FROM API?"
+			var fashionName = "fashionID";
+			// var genreURL = response.something.something;
+			var fashionURL = "http://www.alfano.com/wp-content/uploads/2014/04/opus-portfolio-placeholder-300x300.png";
+			var fashionDiv = $("<img>");
+
+			fashionDiv.attr("src", fashionURL);
+			fashionDiv.attr("alt", "Fashion");
+			fashionDiv.attr("id", fashionName);
+
+			$("#fashionTrends").append(fashionDiv);
+
+			// add genreName to genreArry
+			fashionArry.push(fashionName);
+		}
+
+		//BUTTON TO RETURN TO RESULTS PAGE?
 
 		// FASHION GRID PAGE GOES HERE
 		// RETURN TO RESULTS PAGE?
