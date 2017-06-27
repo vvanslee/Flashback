@@ -159,9 +159,6 @@ $(document).ready(function() {
 
 		//BUTTON TO RETURN TO RESULTS PAGE?
 
-		// FASHION GRID PAGE GOES HERE
-		// RETURN TO RESULTS PAGE?
-
 	});
 
 
@@ -169,8 +166,32 @@ $(document).ready(function() {
 	$("#foodIcon").on("click", function() {
 		console.log("food was clicked af");
 
-		// RECIPE GRID PAGE GOES HERE
-		// RETURN TO RESULTS PAGE?
+		$("form").hide();
+		$("#results-page").hide();
+		$("#genres-page").hide();
+		$("#fashions-page").hide();
+		$("#foods-page").show();
+		$(".birthday-display").html(birthday);
+
+		for (var i = 0; i < 6; i++) {
+
+			// var fashionName = "SOMETHING DYNAMIC FROM API?"
+			var foodName = "foodID";
+			// var genreURL = response.something.something;
+			var foodURL = "http://www.alfano.com/wp-content/uploads/2014/04/opus-portfolio-placeholder-300x300.png";
+			var foodDiv = $("<img>");
+
+			foodDiv.attr("src", foodURL);
+			foodDiv.attr("alt", "Food");
+			foodDiv.attr("id", foodName);
+
+			$("#popularFoods").append(foodDiv);
+
+			// add genreName to genreArry
+			foodArry.push(foodName);
+		}
+
+		//BUTTON TO RETURN TO RESULTS PAGE?
 	});
 
 //-----------------------------------------
