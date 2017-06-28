@@ -9,7 +9,8 @@ $(document).ready(function() {
     TweenMax.to(logo, 0.5, { y:"-15", repeat:-1, yoyo:true});
 
     // datepicker popup
-    $('.datepicker').pickadate({
+    $('.datepicker').pickadate({ 
+    	today: '',
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 126, // Creates a dropdown of 15 years to control year
         min: new Date(1889,12,01),
