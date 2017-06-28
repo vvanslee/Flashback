@@ -174,14 +174,34 @@ $(document).ready(function() {
 
 		// var fashionName = "SOMETHING DYNAMIC FROM API?"
 		var foodName = "foodID";
+
 		// var genreURL = response.something.something;
-		var foodDiv = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/XQu8TTBmGhA' frameborder='0' allowfullscreen></iframe>");
-
+		var foodVid1 = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/XQu8TTBmGhA' frameborder='0' allowfullscreen></iframe>");
 		// fashionDiv.attr("src", fashionURL);
-		foodDiv.attr("alt", "Food Video");
-		foodDiv.attr("id", foodName);
+		foodVid1.attr("alt", "Food Video");
+		foodVid1.attr("id", foodName);
 
-		$("#popularFoods").append(foodDiv);
+		var foodVid2 = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/XQu8TTBmGhA' frameborder='0' allowfullscreen></iframe>");
+		// fashionDiv.attr("src", fashionURL);
+		foodVid2.attr("alt", "Food Video");
+		foodVid2.attr("id", foodName);
+
+
+		$("#popularFoods").append(foodVid1);
+		$("#popularFoods").append(foodVid2);
+
+		for (var i = 0; i < 6; i++) {
+
+			var foodImgUrl = "http://www.alfano.com/wp-content/uploads/2014/04/opus-portfolio-placeholder-300x300.png"
+			var foodDiv = $("<img>");
+
+			foodDiv.attr("src", foodImgUrl);
+			foodDiv.attr("alt", "Food");
+			foodDiv.attr("id", "foodImage");
+
+			$("#popularFoods").append(foodDiv);
+			
+		}
 
 		// add genreName to genreArry
 		foodArry.push(foodName);
