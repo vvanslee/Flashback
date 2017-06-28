@@ -26,8 +26,20 @@ form {
 .logo{
 	width: 200px;
 	margin-top: 30px;	
-
 }
+
+.picker__date-display {
+	background-color: #cfd8dc;
+	color: black;
+}
+
+div.picker__day.picker__day--infocus.picker__day--selected.picker__day--highlighted {
+        background-color: #cfd8dc;
+    }
+
+    button.picker__today, button.picker__close {
+        color: black;
+    }
 
 .card {
 	width: 300px;
