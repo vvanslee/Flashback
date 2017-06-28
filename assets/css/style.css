@@ -1,20 +1,50 @@
-body {
-	background-color: #221f23;
-	color: #ffffff;
-	font-family: 'Open Sans Condensed', sans-serif;
-
-}
 
 form {
-	font-size: 20px;
+    font-size: 20px;
+    width: 100%;
 }
 
-.logo {
-	width: 150px;
-
+#submit {
+	color: black;
 }
 
 .toplogo {
-	width: 80px;
+    width: 120px;
 }
 
+#inputCard {
+	align-content: center;
+	border-radius: 10px;
+	text-align: center;
+}
+
+.main {
+	background-color: #EEEEEE;
+	font-family: 'Open Sans Condensed', sans-serif;
+}
+
+.logo{
+	width: 200px;
+	margin-top: 30px;	
+
+}
+
+.card {
+	width: 300px;
+}
+
+.datepicker {
+	text-align: center;
+}
+
+#musicIcon{
+	margin: 10px;
+}
+
+#fashionIcon{
+	margin: 10px;
+}
+
+#foodIcon{
+	margin: 10px;
+}
