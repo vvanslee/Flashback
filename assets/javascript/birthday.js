@@ -2,6 +2,19 @@ var birthday;
 
 $(document).ready(function() {	
 
+ 	// animated logo 
+	var logo = $(".logo");
+
+
+    TweenMax.to(logo, 0.5, { y:"-10", repeat:-1, yoyo:true});
+
+    // datepicker popup
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15 // Creates a dropdown of 15 years to control year
+    });
+
+
 	console.log ("birthday = " + birthday);
 
 	$("form").submit(function(event){
