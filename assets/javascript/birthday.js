@@ -6,12 +6,14 @@ $(document).ready(function() {
 	var logo = $(".logo");
 
 
-    TweenMax.to(logo, 0.5, { y:"-10", repeat:-1, yoyo:true});
+    TweenMax.to(logo, 0.5, { y:"-15", repeat:-1, yoyo:true});
 
     // datepicker popup
     $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
-        selectYears: 15 // Creates a dropdown of 15 years to control year
+        selectYears: 126, // Creates a dropdown of 15 years to control year
+        min: new Date(1889,12,01),
+  		max: new Date(2015,11,31)
     });
 
 
@@ -134,8 +136,8 @@ $(document).ready(function() {
 		musicDiv.attr("alt", "Music Video");
 		musicDiv.attr("id", musicName);
 
-		$("#musicPlaylist").append(playlistDiv);
-		$("#musicPlaylist").append(musicDiv);
+		$("#popularMusic").append(playlistDiv);
+		$("#popularMusic").append(musicDiv);
 
 		// add genreName to genreArry
 		musicArry.push(musicName);
