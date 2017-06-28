@@ -136,8 +136,8 @@ $(document).ready(function() {
 		musicDiv.attr("alt", "Music Video");
 		musicDiv.attr("id", musicName);
 
-		$("#popularMusic").append(playlistDiv);
-		$("#popularMusic").append(musicDiv);
+		$("#musicPlaylist").append(playlistDiv);
+		$("#musicPlaylist").append(musicDiv);
 
 		// add genreName to genreArry
 		musicArry.push(musicName);
