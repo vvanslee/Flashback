@@ -167,7 +167,7 @@ $(document).ready(function() {
 		fashionDiv.attr("alt", "Fashion Video");
 		fashionDiv.attr("id", fashionName);
 
-		$("#fashionTrends").append(fashionDiv);
+		$(".fotorama").append(fashionDiv);
 
 		// add genreName to genreArry
 		fashionArry.push(fashionName);
@@ -215,7 +215,7 @@ $(document).ready(function() {
 			foodDiv.attr("alt", "Food");
 			foodDiv.attr("id", "foodImage");
 
-			$("#popularFoods").append(foodDiv);
+			$(".fotorama").append(foodDiv);
 			
 		}
 

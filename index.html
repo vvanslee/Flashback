@@ -2,31 +2,31 @@
 <html>
 <head>
     <title>Birthday party app</title>
-<!--      
-    Reset
-    Call CSS  -->
+     
+    <!-- favicon -->
     <link rel="icon" type="image" href="assets/images/favicon.png">
-    <!-- Style frameworks
-    Set Javascript -->
+    <!-- Set Javascript  -->
     <script type="text/javascript" src="./assets/javascript/birthday.js"></script>
     <!-- google font -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
-    <!-- Set AJAX
-    Firebase-->
-
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">   
+    <!--  greensock cdn -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/CSSPlugin.min.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/plugins/CSSPlugin.min.js"></script>
+    <!--  jquery cdn -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- personal javascript -->
     <script src="assets/javascript/birthday.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- Compiled and minified CSS -->
+     <!-- MDN cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
-
-   <!--  call Personal CSS -->
-    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+    <!-- fotorama.css & fotorama.js. -->
+    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> 
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> 
+
+    <!--  call Personal CSS -->
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+    
           
 </head>
 <body class="main">
@@ -56,6 +56,7 @@
 </div>
 </div>
 
+
 <div id="results-page" hidden>
     <p class="birthday-display"></p>
     <div id="icons"></div>
@@ -72,11 +73,21 @@
 </div>
 <div id="fashions-page" hidden>
     <p class="birthday-display"></p>
-    <div id="fashionTrends"></div>
+    <div id="fashionTrends">
+        <div class="fotorama" data-nav="thumbs">
+
+            <img src="http://s.fotorama.io/1.jpg">
+            <img src="http://s.fotorama.io/2.jpg">
+        </div>
+    </div>
 </div>
 <div id="foods-page" hidden>
     <p class="birthday-display"></p>
-    <div id="popularFoods"></div>
+    <div id="popularFoods">
+        <div class="fotorama" data-nav="thumbs">
+
+        </div>
+    </div>
 </div>
 </body>
 </html>
