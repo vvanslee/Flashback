@@ -11,6 +11,8 @@ $(document).ready(function() {
     // datepicker popup
     $('.datepicker').pickadate({ 
     	today: '',
+    	format: 'mmmm d yyyy',
+    	formatSubmit: 'mmmm/d/yyyy',
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 126, // Creates a dropdown of 15 years to control year
         min: new Date(1889,12,01),
