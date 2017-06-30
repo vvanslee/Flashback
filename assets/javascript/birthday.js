@@ -11,8 +11,6 @@ $(document).ready(function() {
     // datepicker popup
     $('.datepicker').pickadate({ 
     	today: '',
-    	format: 'mmmm d yyyy',
-    	formatSubmit: 'mmmm/d/yyyy',
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 126, // Creates a dropdown of 15 years to control year
         min: new Date(1889,12,01),
@@ -146,7 +144,7 @@ $(document).ready(function() {
 		musicArry.push(musicName);
 
 		//BUTTON TO RETURN TO RESULTS PAGE?
-
+		bingAPI("music");
 	});
 
 	// on click opens fashion grid page
@@ -175,7 +173,7 @@ $(document).ready(function() {
 		fashionArry.push(fashionName);
 
 		//BUTTON TO RETURN TO RESULTS PAGE?
-
+		bingAPI("fashion");
 	});
 
 
@@ -225,8 +223,52 @@ $(document).ready(function() {
 		foodArry.push(foodName);
 
 		//BUTTON TO RETURN TO RESULTS PAGE?
+		bingAPI("food");
 	});
 
 //-----------------------------------------
+	$("button.goback").on("click", function(){
+		$("#music-page").hide();
+		$("#fashions-page").hide();
+		$("#foods-page").hide();
+		$("#results-page").show();
+		$("div.genres>img").remove();
+	});
 
 });
+
+function bingAPI (category) {
+	//a delay is needed between ajax calls, use information from here: https://stackoverflow.com/questions/287188/how-to-know-when-all-ajax-calls-are-complete
+	//for (var i = 0; i < 2; i++) {
+	var params = {
+	    // Request parameters
+	    "q": birthday + " " + category,
+	};
+	
+	//console.log(category);
+	console.log(params.q);
+
+	$.ajax({
+	    url: "https://api.cognitive.microsoft.com/bing/v5.0/images/search?" + $.param(params),
+	    beforeSend: function(xhrObj){
+	        // Request headers
+	        xhrObj.setRequestHeader("Content-Type","multipart/form-data");
+	        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","6fa4daa0986746ff9d29dc25701da10d");
+	    },
+	    type: "POST",
+	    // Request bodyconsole.log(data);
+	    data: "{body}",
+	})
+	.done(function(data) {
+	    //console.log(data);
+	    //console.log(data.value[0].thumbnailUrl);
+	    for (var j = 0; j < 6; j++) {
+	    	//$("#" + category + "Genres").append('<img src="' + data.value[j].thumbnailUrl + '" alt="Loading Image..." height="300" width="300">');
+	    	$("div.genres").append('<img src="' + data.value[j].thumbnailUrl + '" alt="Loading Image..." height="300" width="300">');
+	    }
+	})
+	.fail(function() {
+	    alert("error");
+	});
+	//}
+}

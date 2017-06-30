@@ -16,7 +16,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- personal javascript -->
     <script src="assets/javascript/birthday.js"></script>
-    <script src="assets/javascript/bing.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <!-- MDN cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
@@ -45,16 +44,16 @@
                      <div id="modal-container" style="height:10px">
                         <div id="error-modal"></div>
                     </div>  
-                <input type="date" class="datepicker" name="birthday" min="1850-01-01" max="2017-06-30">
+                    <input type="date" class="datepicker" name="birthday" min="1850-01-01" max="2017-06-30">
                     <button class="btn waves-effect waves-light blue-grey lighten-4" id="submit" type="submit" name="action">
                      Submit
                         <i class="material-icons right"></i>
                     </button>
                     </p>
-            </center>
-        </form>
+                </center>
+            </form>
+        </div>
     </div>                
-</div>
 </div>
 
 
@@ -68,22 +67,34 @@
         <span>POPULAR FOOD</span>
     </div>
 </div>
+
 <div id="music-page" hidden>
     <p class="birthday-display"></p>
+    <p>Music Page</p>
+    <button class="goback">Go Back</button>
+    <div class="genres"></div>
+
     <div id="musicPlaylist"></div>
 </div>
 <div id="fashions-page" hidden>
     <p class="birthday-display"></p>
+    <p>Fashion Page</p>
+    <button class="goback">Go Back</button>
+    <div class="genres"></div>
+
     <div id="fashionTrends">
         <div class="fotorama" data-nav="thumbs">
 
-            <img src="http://s.fotorama.io/1.jpg">
-            <img src="http://s.fotorama.io/2.jpg">
         </div>
     </div>
 </div>
+
 <div id="foods-page" hidden>
     <p class="birthday-display"></p>
+    <p>Food Page</p>
+    <button class="goback">Go Back</button>
+    <div class="genres"></div>
+
     <div id="popularFoods">
         <div class="fotorama" data-nav="thumbs">
 
