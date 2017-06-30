@@ -1,4 +1,5 @@
 var birthday;
+var searchTerm;
 
 $(document).ready(function() {	
 
