@@ -1,4 +1,6 @@
 var birthday;
+var searchYear;
+var searchDecade;
 var ytID;
 var musicArry = [];
 var fashionArry = [];
@@ -15,10 +17,12 @@ $(document).ready(function() {
     // datepicker popup
     $('.datepicker').pickadate({ 
     	today: '',
+    	format: 'mmmm d yyyy',
+    	formatSubmit: 'mmmm/d/yyyy',
         selectMonths: true, // Creates a dropdown to control month
-        selectYears: 126, // Creates a dropdown of 15 years to control year
-        min: new Date(1889,12,01),
-  		max: new Date(2015,11,31)
+        selectYears: 120, // Creates a dropdown of 15 years to control year
+        min: new Date(1899,12,01),
+  		max: new Date(2009,11,31)
     });
 
 
@@ -29,6 +33,14 @@ $(document).ready(function() {
 
 		birthday = $("input[name='birthday']").val(),
 		console.log ("birthday = " + birthday); 
+
+		// convert birthday into search terms
+		var tempYear = birthday.slice(-4);
+		searchYear = tempYear;
+		console.log("search year = " + searchYear);
+		var tempDecade = searchYear.slice(0,3) + "0's";
+		searchDecade = tempDecade;
+		console.log("search decade = " + searchDecade);
 
 		if (birthday === "" || birthday === undefined || birthday === null) {
 			$("#error-modal").show();
@@ -255,7 +267,7 @@ function bingAPI (category) {
 	//for (var i = 0; i < 2; i++) {
 	var params = {
 	    // Request parameters
-	    "q": birthday + " " + category,
+	    "q": searchDecade + " " + category,
 	};
 	
 	//console.log(category);
@@ -320,7 +332,7 @@ function ytAPI (category) {
 		 cache: false,
 		 data: $.extend({
 			 key: 'AIzaSyAp2WLyZ5DBiCHyyPJyg6dgHg6BTQgYf6M',
-			 q: birthday + " " + category,
+			 q: "top songs of " + searchYear,
 			 part: 'snippet',
 			 fields: 'items/id/videoId'
 		 }, {maxResults:5/*,pageToken:1*/}),
@@ -331,6 +343,7 @@ function ytAPI (category) {
 		 //url: 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=cat&fields=items%2Fid%2FvideoId&key=AIzaSyAp2WLyZ5DBiCHyyPJyg6dgHg6BTQgYf6M'
 	})
 	.done(function(data) {
+		console.log(data);
 		console.log("the yt id: " + data.items[0].id.videoId);
 		ytID = data.items[0].id.videoId;
 		console.log("is the YT ID an object?");
