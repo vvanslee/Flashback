@@ -26,7 +26,13 @@ $(document).ready(function() {
 		event.preventDefault();
 
 		birthday = $("input[name='birthday']").val(),
-		console.log ("birthday = " + birthday); 
+		console.log ("birthday = " + birthday);
+
+		// convert birthday into search term
+        var tempDate = birthday.slice(-4);
+        console.log("tempDate = " + tempDate);
+        searchTerm = tempDate.slice(0, 3) + "0's";
+        console.log("search year = " + searchTerm);
 
 		if (birthday === "" || birthday === undefined || birthday === null) {
 			$("#error-modal").show();
@@ -244,7 +250,7 @@ function bingAPI (category) {
 	//for (var i = 0; i < 2; i++) {
 	var params = {
 	    // Request parameters
-	    "q": birthday + " " + category,
+	    "q": searchTerm + " " + category,
 	};
 	
 	//console.log(category);
