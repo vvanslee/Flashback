@@ -1,5 +1,8 @@
 var birthday;
-var searchTerm;
+var ytID;
+var musicArry = [];
+var fashionArry = [];
+var foodArry = [];
 
 $(document).ready(function() {	
 
@@ -12,8 +15,6 @@ $(document).ready(function() {
     // datepicker popup
     $('.datepicker').pickadate({ 
     	today: '',
-    	format: 'mmmm d yyyy',
-    	formatSubmit: 'mmmm/d/yyyy',
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 126, // Creates a dropdown of 15 years to control year
         min: new Date(1889,12,01),
@@ -27,19 +28,12 @@ $(document).ready(function() {
 		event.preventDefault();
 
 		birthday = $("input[name='birthday']").val(),
-		console.log ("birthday = " + birthday);
-
-		// convert birthday into search term
-        var tempDate = birthday.slice(-4);
-        console.log("tempDate = " + tempDate);
-        searchTerm = tempDate.slice(0, 3) + "0's";
-        console.log("search year = " + searchTerm);
+		console.log ("birthday = " + birthday); 
 
 		if (birthday === "" || birthday === undefined || birthday === null) {
 			$("#error-modal").show();
 			$("#error-modal").html("Please enter a valid birth date.");
 			$("#error-modal").fadeOut(3000);
-
 		} else {
 			$("form").hide();
 			$("#results-page").show();
@@ -120,9 +114,10 @@ $(document).ready(function() {
 	//                    NEXT
 	// ----------------------------------------------
 
+/*	// Made these global at the top
 	var musicArry = [];
 	var fashionArry = [];
-	var foodArry = [];
+	var foodArry = [];*/
 
 	// on click opens music genres page
 	$("#musicIcon").on("click", function() {
@@ -132,7 +127,8 @@ $(document).ready(function() {
 		$("#music-page").show();
 		$(".birthday-display").html(birthday);
 
-		// var musicName = "SOMETHING DYNAMIC FROM API?"
+		ytAPI("music"); // this function call replaces the commented out code immediately below
+/*		// var musicName = "SOMETHING DYNAMIC FROM API?"
 		var musicName = "musicID";
 		// var musicURL = response.something.something;
 
@@ -140,7 +136,9 @@ $(document).ready(function() {
 
 		playlistDiv.attr("id", "musicPlaylist");
 
-		var musicDiv = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/XQu8TTBmGhA' frameborder='0' allowfullscreen></iframe>");
+		ytAPI("music");
+		console.log("the music id: " + ytID);
+		var musicDiv = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/" + ytID + "' frameborder='0' allowfullscreen></iframe>");
 
 		// musicDiv.attr("src", musicURL);
 		musicDiv.attr("alt", "Music Video");
@@ -150,7 +148,7 @@ $(document).ready(function() {
 		$("#musicPlaylist").append(musicDiv);
 
 		// add genreName to genreArry
-		musicArry.push(musicName);
+		musicArry.push(musicName);*/
 
 		//BUTTON TO RETURN TO RESULTS PAGE?
 		bingAPI("music");
@@ -166,11 +164,13 @@ $(document).ready(function() {
 		$("#fashions-page").show();
 		$(".birthday-display").html(birthday);
 
-
-		// var fashionName = "SOMETHING DYNAMIC FROM API?"
+		ytAPI("fashion"); // this function call replaces the commented out code immediately below
+/*		// var fashionName = "SOMETHING DYNAMIC FROM API?"
 		var fashionName = "fashionID";
 		// var genreURL = response.something.something;
-		var fashionDiv = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/XQu8TTBmGhA' frameborder='0' allowfullscreen></iframe>");
+		ytAPI("fashion");
+		console.log("the fashion id: " + ytID);
+		var fashionDiv = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/" + ytID + "' frameborder='0' allowfullscreen></iframe>");
 
 		// fashionDiv.attr("src", fashionURL);
 		fashionDiv.attr("alt", "Fashion Video");
@@ -179,7 +179,7 @@ $(document).ready(function() {
 		$(".fotorama").append(fashionDiv);
 
 		// add genreName to genreArry
-		fashionArry.push(fashionName);
+		fashionArry.push(fashionName);*/
 
 		//BUTTON TO RETURN TO RESULTS PAGE?
 		bingAPI("fashion");
@@ -197,16 +197,19 @@ $(document).ready(function() {
 		$("#foods-page").show();
 		$(".birthday-display").html(birthday);
 
-		// var fashionName = "SOMETHING DYNAMIC FROM API?"
+		ytAPI("food"); // this function call replaces the commented out code immediately below
+/*		// var fashionName = "SOMETHING DYNAMIC FROM API?"
 		var foodName = "foodID";
+		ytAPI("food");
+		console.log("the food id: " + ytID);
 
 		// var genreURL = response.something.something;
-		var foodVid1 = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/XQu8TTBmGhA' frameborder='0' allowfullscreen></iframe>");
+		var foodVid1 = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/" + ytID + "' frameborder='0' allowfullscreen></iframe>");
 		// fashionDiv.attr("src", fashionURL);
 		foodVid1.attr("alt", "Food Video");
 		foodVid1.attr("id", foodName);
 
-		var foodVid2 = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/XQu8TTBmGhA' frameborder='0' allowfullscreen></iframe>");
+		var foodVid2 = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/" + ytID + "' frameborder='0' allowfullscreen></iframe>");
 		// fashionDiv.attr("src", fashionURL);
 		foodVid2.attr("alt", "Food Video");
 		foodVid2.attr("id", foodName);
@@ -215,7 +218,10 @@ $(document).ready(function() {
 		$("#popularFoods").append(foodVid1);
 		$("#popularFoods").append(foodVid2);
 
-		for (var i = 0; i < 6; i++) {
+		// add genreName to genreArry
+		foodArry.push(foodName);*/
+
+/*		for (var i = 0; i < 6; i++) {
 
 			var foodImgUrl = "http://www.alfano.com/wp-content/uploads/2014/04/opus-portfolio-placeholder-300x300.png"
 			var foodDiv = $("<img>");
@@ -226,10 +232,7 @@ $(document).ready(function() {
 
 			$(".fotorama").append(foodDiv);
 			
-		}
-
-		// add genreName to genreArry
-		foodArry.push(foodName);
+		}*/
 
 		//BUTTON TO RETURN TO RESULTS PAGE?
 		bingAPI("food");
@@ -246,12 +249,13 @@ $(document).ready(function() {
 
 });
 
+// --- BING API Function and Fotorama Loader ---
 function bingAPI (category) {
 	//a delay is needed between ajax calls, use information from here: https://stackoverflow.com/questions/287188/how-to-know-when-all-ajax-calls-are-complete
 	//for (var i = 0; i < 2; i++) {
 	var params = {
 	    // Request parameters
-	    "q": searchTerm + " " + category,
+	    "q": birthday + " " + category,
 	};
 	
 	//console.log(category);
@@ -273,11 +277,121 @@ function bingAPI (category) {
 	    //console.log(data.value[0].thumbnailUrl);
 	    for (var j = 0; j < 6; j++) {
 	    	//$("#" + category + "Genres").append('<img src="' + data.value[j].thumbnailUrl + '" alt="Loading Image..." height="300" width="300">');
-	    	$("div.genres").append('<img src="' + data.value[j].thumbnailUrl + '" alt="Loading Image..." height="300" width="300">');
+	    	$(".genres").append('<img src="' + data.value[j].thumbnailUrl + '" alt="Loading Image..." height="300" width="300">');
+			var foodDiv = $("<img>");
+			foodDiv.attr("src", data.value[j].thumbnailUrl);
+			foodDiv.attr("alt", "Loading...");
+			foodDiv.attr("class", "fotoramaImg");
+
+			// Select which page to load the images
+			if (category == "fashion") {
+				// ADD CODE
+			} else if (category == "food") {
+				$(".fotorama").append(foodDiv);
+			} else {
+				console.log("no fotorama for you");
+			}
+			
 	    }
+
+/*    	// Fotorama loader
+		for (var i = 0; i < 6; i++) {
+
+			var foodImgUrl = "http://www.alfano.com/wp-content/uploads/2014/04/opus-portfolio-placeholder-300x300.png"
+			var foodDiv = $("<img>");
+
+			foodDiv.attr("src", foodImgUrl);
+			foodDiv.attr("alt", "Food");
+			foodDiv.attr("id", "foodImage");
+
+			$(".fotorama").append(foodDiv);
+			
+		}*/
 	})
 	.fail(function() {
-	    alert("error");
+	    console.log("error with bingAPI");
 	});
 	//}
+}
+
+// --- YOUTUBE API Function ---
+function ytAPI (category) {
+	$.ajax({
+		 cache: false,
+		 data: $.extend({
+			 key: 'AIzaSyAp2WLyZ5DBiCHyyPJyg6dgHg6BTQgYf6M',
+			 q: birthday + " " + category,
+			 part: 'snippet',
+			 fields: 'items/id/videoId'
+		 }, {maxResults:5/*,pageToken:1*/}),
+		 dataType: 'json',
+		 type: 'GET',
+		 timeout: 5000,
+		 url: 'https://www.googleapis.com/youtube/v3/search'
+		 //url: 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=cat&fields=items%2Fid%2FvideoId&key=AIzaSyAp2WLyZ5DBiCHyyPJyg6dgHg6BTQgYf6M'
+	})
+	.done(function(data) {
+		console.log("the yt id: " + data.items[0].id.videoId);
+		ytID = data.items[0].id.videoId;
+		console.log("is the YT ID an object?");
+		console.log(ytID);
+		console.log("THE YOUTUBE ID IS ++++ " + ytID);
+		if (category == "music") {
+			// var musicName = "SOMETHING DYNAMIC FROM API?"
+			var musicName = "musicID";
+			// var musicURL = response.something.something;
+
+			var playlistDiv = $("<div>DYNAMICALLY GENERATED PLAYLIST</div>");
+
+			playlistDiv.attr("id", "musicPlaylist");
+
+			var musicDiv = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/" + ytID + "' frameborder='0' allowfullscreen></iframe>");
+
+			// musicDiv.attr("src", musicURL);
+			musicDiv.attr("alt", "Music Video");
+			musicDiv.attr("id", musicName);
+
+			$("#musicPlaylist").append(playlistDiv);
+			$("#musicPlaylist").append(musicDiv);
+
+			// add genreName to genreArry
+			musicArry.push(musicName);
+		} else if (category == "fashion") {
+			// var fashionName = "SOMETHING DYNAMIC FROM API?"
+			var fashionName = "fashionID";
+			// var genreURL = response.something.something;
+			var fashionDiv = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/" + ytID + "' frameborder='0' allowfullscreen></iframe>");
+
+			// fashionDiv.attr("src", fashionURL);
+			fashionDiv.attr("alt", "Fashion Video");
+			fashionDiv.attr("id", fashionName);
+
+			$(".fotorama").append(fashionDiv);
+
+			// add genreName to genreArry
+			fashionArry.push(fashionName);
+		} else if (category == "food") {
+			var foodName = "foodID";
+			// var genreURL = response.something.something;
+			var foodVid1 = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/" + ytID + "' frameborder='0' allowfullscreen></iframe>");
+			// fashionDiv.attr("src", fashionURL);
+			foodVid1.attr("alt", "Food Video");
+			foodVid1.attr("id", foodName);
+
+			var foodVid2 = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/" + ytID + "' frameborder='0' allowfullscreen></iframe>");
+			// fashionDiv.attr("src", fashionURL);
+			foodVid2.attr("alt", "Food Video");
+			foodVid2.attr("id", foodName);
+
+			$("#popularFoods").append(foodVid1);
+			$("#popularFoods").append(foodVid2);
+			// add genreName to genreArry
+			foodArry.push(foodName);
+		} else {
+			console.log("there is an error in the category selection of ytAPI");
+		}
+	})
+	.fail(function() {
+	    console.log("error with ytAPI");
+	})
 }
