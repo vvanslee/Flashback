@@ -321,8 +321,8 @@ function ytAPI (category) {
 		 data: $.extend({
 			 key: 'AIzaSyAp2WLyZ5DBiCHyyPJyg6dgHg6BTQgYf6M',
 			 q: birthday + " " + category,
-			 part: 'snippet',
-			 fields: 'items/id/videoId'
+			 part: 'snippet'
+			 // fields: 'items/id/videoId'
 		 }, {maxResults:5/*,pageToken:1*/}),
 		 dataType: 'json',
 		 type: 'GET',
@@ -331,6 +331,7 @@ function ytAPI (category) {
 		 //url: 'https://www.googleapis.com/youtube/v3/search?part=snippet&q=cat&fields=items%2Fid%2FvideoId&key=AIzaSyAp2WLyZ5DBiCHyyPJyg6dgHg6BTQgYf6M'
 	})
 	.done(function(data) {
+		console.log(data);
 		console.log("the yt id: " + data.items[0].id.videoId);
 		ytID = data.items[0].id.videoId;
 		console.log("is the YT ID an object?");
