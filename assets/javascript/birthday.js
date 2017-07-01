@@ -22,7 +22,7 @@ $(document).ready(function() {
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 120, // Creates a dropdown of 15 years to control year
         min: new Date(1899,12,01),
-  		max: new Date(2009,11,31)
+  		max: new Date(2015,11,31)
     });
 
 
