@@ -163,7 +163,7 @@ $(document).ready(function() {
 		musicArry.push(musicName);*/
 
 		//BUTTON TO RETURN TO RESULTS PAGE?
-		bingAPI("music");
+
 	});
 
 	// on click opens fashion grid page
@@ -176,7 +176,7 @@ $(document).ready(function() {
 		$("#fashions-page").show();
 		$(".birthday-display").html(birthday);
 
-		ytAPI("fashion"); // this function call replaces the commented out code immediately below
+		bingAPI("fashion"); // this function call replaces the commented out code immediately below
 /*		// var fashionName = "SOMETHING DYNAMIC FROM API?"
 		var fashionName = "fashionID";
 		// var genreURL = response.something.something;
@@ -194,7 +194,7 @@ $(document).ready(function() {
 		fashionArry.push(fashionName);*/
 
 		//BUTTON TO RETURN TO RESULTS PAGE?
-		bingAPI("fashion");
+
 	});
 
 
@@ -209,7 +209,7 @@ $(document).ready(function() {
 		$("#foods-page").show();
 		$(".birthday-display").html(birthday);
 
-		ytAPI("food"); // this function call replaces the commented out code immediately below
+		bingAPI("food"); // this function call replaces the commented out code immediately below
 /*		// var fashionName = "SOMETHING DYNAMIC FROM API?"
 		var foodName = "foodID";
 		ytAPI("food");
@@ -247,7 +247,7 @@ $(document).ready(function() {
 		}*/
 
 		//BUTTON TO RETURN TO RESULTS PAGE?
-		bingAPI("food");
+
 	});
 
 //-----------------------------------------
@@ -257,6 +257,7 @@ $(document).ready(function() {
 		$("#foods-page").hide();
 		$("#results-page").show();
 		$("div.genres>img").remove();
+		$("div#musicPlaylist>iframe").remove();
 	});
 
 });
@@ -290,19 +291,19 @@ function bingAPI (category) {
 	    for (var j = 0; j < 6; j++) {
 	    	//$("#" + category + "Genres").append('<img src="' + data.value[j].thumbnailUrl + '" alt="Loading Image..." height="300" width="300">');
 	    	$(".genres").append('<img src="' + data.value[j].thumbnailUrl + '" alt="Loading Image..." height="300" width="300">');
-			var foodDiv = $("<img>");
-			foodDiv.attr("src", data.value[j].thumbnailUrl);
-			foodDiv.attr("alt", "Loading...");
-			foodDiv.attr("class", "fotoramaImg");
+			var bingDiv = $("<img>");
+			bingDiv.attr("src", data.value[j].thumbnailUrl);
+			bingDiv.attr("alt", "Loading...");
+			bingDiv.attr("class", "fotoramaImg");
 
 			// Select which page to load the images
-			if (category == "fashion") {
-				// ADD CODE
-			} else if (category == "food") {
-				$(".fotorama").append(foodDiv);
-			} else {
-				console.log("no fotorama for you");
-			}
+			// if (category == "fashion") {
+			// 	// ADD CODE
+			// } else if (category == "food") {
+			// 	$(".fotorama").append(foodDiv);
+			// } else {
+			// 	console.log("no fotorama for you");
+			// }
 			
 	    }
 
@@ -354,52 +355,47 @@ function ytAPI (category) {
 			var musicName = "musicID";
 			// var musicURL = response.something.something;
 
-			var playlistDiv = $("<div>DYNAMICALLY GENERATED PLAYLIST</div>");
-
-			playlistDiv.attr("id", "musicPlaylist");
-
 			var musicDiv = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/" + ytID + "' frameborder='0' allowfullscreen></iframe>");
 
 			// musicDiv.attr("src", musicURL);
-			musicDiv.attr("alt", "Music Video");
+			musicDiv.attr("alt", "Loading Music Video...");
 			musicDiv.attr("id", musicName);
 
-			$("#musicPlaylist").append(playlistDiv);
 			$("#musicPlaylist").append(musicDiv);
 
 			// add genreName to genreArry
 			musicArry.push(musicName);
-		} else if (category == "fashion") {
-			// var fashionName = "SOMETHING DYNAMIC FROM API?"
-			var fashionName = "fashionID";
-			// var genreURL = response.something.something;
-			var fashionDiv = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/" + ytID + "' frameborder='0' allowfullscreen></iframe>");
+		// } else if (category == "fashion") {
+		// 	// var fashionName = "SOMETHING DYNAMIC FROM API?"
+		// 	var fashionName = "fashionID";
+		// 	// var genreURL = response.something.something;
+		// 	var fashionDiv = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/" + ytID + "' frameborder='0' allowfullscreen></iframe>");
 
-			// fashionDiv.attr("src", fashionURL);
-			fashionDiv.attr("alt", "Fashion Video");
-			fashionDiv.attr("id", fashionName);
+		// 	// fashionDiv.attr("src", fashionURL);
+		// 	fashionDiv.attr("alt", "Fashion Video");
+		// 	fashionDiv.attr("id", fashionName);
 
-			$(".fotorama").append(fashionDiv);
+		// 	$(".fotorama").append(fashionDiv);
 
-			// add genreName to genreArry
-			fashionArry.push(fashionName);
-		} else if (category == "food") {
-			var foodName = "foodID";
-			// var genreURL = response.something.something;
-			var foodVid1 = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/" + ytID + "' frameborder='0' allowfullscreen></iframe>");
-			// fashionDiv.attr("src", fashionURL);
-			foodVid1.attr("alt", "Food Video");
-			foodVid1.attr("id", foodName);
+		// 	// add genreName to genreArry
+		// 	fashionArry.push(fashionName);
+		// } else if (category == "food") {
+		// 	var foodName = "foodID";
+		// 	// var genreURL = response.something.something;
+		// 	var foodVid1 = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/" + ytID + "' frameborder='0' allowfullscreen></iframe>");
+		// 	// fashionDiv.attr("src", fashionURL);
+		// 	foodVid1.attr("alt", "Food Video");
+		// 	foodVid1.attr("id", foodName);
 
-			var foodVid2 = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/" + ytID + "' frameborder='0' allowfullscreen></iframe>");
-			// fashionDiv.attr("src", fashionURL);
-			foodVid2.attr("alt", "Food Video");
-			foodVid2.attr("id", foodName);
+		// 	var foodVid2 = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/" + ytID + "' frameborder='0' allowfullscreen></iframe>");
+		// 	// fashionDiv.attr("src", fashionURL);
+		// 	foodVid2.attr("alt", "Food Video");
+		// 	foodVid2.attr("id", foodName);
 
-			$("#popularFoods").append(foodVid1);
-			$("#popularFoods").append(foodVid2);
-			// add genreName to genreArry
-			foodArry.push(foodName);
+		// 	$("#popularFoods").append(foodVid1);
+		// 	$("#popularFoods").append(foodVid2);
+		// 	// add genreName to genreArry
+		// 	foodArry.push(foodName);
 		} else {
 			console.log("there is an error in the category selection of ytAPI");
 		}
