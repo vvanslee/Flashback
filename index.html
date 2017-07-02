@@ -23,78 +23,78 @@
     <!-- fotorama.css & fotorama.js. -->
     <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> 
     <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> 
-
     <!--  call Personal CSS -->
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    
-          
+         
 </head>
+
 <body class="main">
-<img src="assets/images/partyhat2.png" class ="toplogo" alt="logo" hidden>
 
-<div class="row">
-    <div class="col s6 offset-s3">
-        <form>
-            <center>
-                <img src="assets/images/partyhat2.png" class ="logo" alt="logo">
-                  <p class="z-depth-0">
-                <div class="card-panel blue-grey lighten-4" id="inputCard">  
-                    ENTER BIRTHDAY
-                     <br>
-                     <div id="modal-container" style="height:10px">
-                        <div id="error-modal"></div>
-                    </div>  
-                    <input type="date" class="datepicker" name="birthday" min="1850-01-01" max="2017-06-30">
-                    <button class="btn waves-effect waves-light blue-grey lighten-4" id="submit" type="submit" name="action">
-                     Submit
-                        <i class="material-icons right"></i>
-                    </button>
-                    </p>
-                </center>
-            </form>
+    <img src="assets/images/partyhat2.png" class ="toplogo" alt="logo" hidden>
+
+    <div class="row">
+        <div class="col s6 offset-s3">
+            <form>
+                <center>
+                    <img src="assets/images/partyhat2.png" class ="logo" alt="logo">
+                      <p class="z-depth-0">
+                    <div class="card-panel blue-grey lighten-4" id="inputCard">  
+                        ENTER BIRTHDAY
+                         <br>
+                         <div id="modal-container" style="height:10px">
+                            <div id="error-modal"></div>
+                        </div>  
+                        <input type="date" class="datepicker" name="birthday" min="1850-01-01" max="2017-06-30">
+                        <button class="btn waves-effect waves-light blue-grey lighten-4" id="submit" type="submit" name="action">
+                         Submit
+                            <i class="material-icons right"></i>
+                        </button>
+                        </p>
+                    </center>
+                </form>
+            </div>
+        </div>                
+    </div>
+
+
+    <div id="results-page" hidden>
+        <p class="birthday-display"></p>
+        <div id="icons"></div>
+        
+        <div id="titles">
+            <span>POPULAR MUSIC</span>
+            <span>POPULAR FASHION</span>
+            <span>POPULAR FOOD</span>
         </div>
-    </div>                
-</div>
-
-
-<div id="results-page" hidden>
-    <p class="birthday-display"></p>
-    <div id="icons"></div>
-    
-    <div id="titles">
-        <span>POPULAR MUSIC</span>
-        <span>POPULAR FASHION</span>
-        <span>POPULAR FOOD</span>
     </div>
-</div>
 
-<div id="music-page" hidden>
-    <p class="birthday-display"></p>
-    <p>Music Page</p>
-    <button class="goback">Go Back</button>
+    <div id="music-page" hidden>
+        <p class="birthday-display"></p>
+        <p>Music Page</p>
+        <button class="goback">Go Back</button>
 
-    <div id="musicPlaylist"></div>
-</div>
-
-<div id="fashions-page" hidden>
-    <p class="birthday-display"></p>
-    <p>Fashion Page</p>
-    <button class="goback">Go Back</button>
-
-    <div class="genres">
-        <!-- <div class="fotorama" data-nav="thumbs"></div> -->
+        <div id="musicPlaylist"></div>
     </div>
-</div>
 
-<div id="foods-page" hidden>
-    <p class="birthday-display"></p>
-    <p>Food Page</p>
-    <button class="goback">Go Back</button>
+    <div id="fashions-page" hidden>
+        <p class="birthday-display"></p>
+        <p>Fashion Page</p>
+        <button class="goback">Go Back</button>
 
-    <div class="genres">
-        <!-- <div class="fotorama" data-nav="thumbs"></div> -->
+        <div class="genres">
+            <!-- <div class="fotorama" data-nav="thumbs"></div> -->
+        </div>
     </div>
-</div>
+
+    <div id="foods-page" hidden>
+        <p class="birthday-display"></p>
+        <p>Food Page</p>
+        <button class="goback">Go Back</button>
+
+        <div class="genres">
+            <!-- <div class="fotorama" data-nav="thumbs"></div> -->
+        </div>
+    </div>
 
 </body>
 </html>
