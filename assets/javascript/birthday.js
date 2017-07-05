@@ -136,6 +136,24 @@ $(document).ready(function() {
 	});
 
 	//---------------------------------------------
+	// LOGO HOME BUTTON
+	//---------------------------------------------
+
+	$(".toplogo").on("click", function() {
+		console.log("Return to Homepage");
+
+		$("#music-page").hide();
+		$("#fashions-page").hide();
+		$("#foods-page").hide();
+		$("#results-page").hide();
+		$(".toplogo").hide();
+		$("div.imageResults>img").remove();
+		$("div#musicPlaylist>iframe").remove();
+		$("#homepage").show();	
+
+	});
+
+	//---------------------------------------------
 	//                BACK BUTTON 
 	//---------------------------------------------
 	$("button.goback").on("click", function(){
