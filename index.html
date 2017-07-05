@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Birthday party app</title>
+    <title>Party Planner</title>
      
     <!-- favicon -->
     <link rel="icon" type="image" href="assets/images/favicon.png">
-    <!-- Set Javascript  -->
-   <!--  <script type="text/javascript" src="./assets/javascript/birthday.js"></script> -->
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">   
     <!--  greensock cdn -->
@@ -16,12 +14,11 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- personal javascript -->
     <script src="assets/javascript/birthday.js"></script>
-    
+    <!-- viewport -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <!-- MDN cdn -->
+    <!-- MDN cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
-    
     <!--  call Personal CSS -->
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
     
@@ -59,34 +56,32 @@
 
     <div id="results-page" hidden>
         <h2 class="birthday-display"></h2>
-            <div id="icons">
-            </div>
+        <div id="icons"></div>
                     
-    </div>
- </center>  
+    </div> 
 
     <div id="music-page" hidden>
         <h2 class="birthday-display"></h2>
         
-            <div id="musicPlaylist"></div>
+        <div id="musicPlaylist"></div>
+
         <button class="goback">Go Back</button>
     </div>
 
     <div id="fashions-page" hidden>
         <h2 class="birthday-display"></h2>
-        
-            <div class="genres">   
-            </div>
+
+        <div class="imageResults"></div>
+
         <button class="goback">Go Back</button>
     </div>
 
     <div id="foods-page" hidden>
         <h2 class="birthday-display"></h2>
         
-            <div class="genres"> 
+        <div class="imageResults"></div>
 
-            </div>
-            <button class="goback">Go Back</button>
+        <button class="goback">Go Back</button>
     </div>
 
 </body>
