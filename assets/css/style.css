@@ -19,7 +19,7 @@ form {
 }
 
 .main {
-	background-color: #EEEEEE;
+	background-color: #eeeeee;
 	font-family: 'Open Sans Condensed', sans-serif;
 }
 
@@ -29,12 +29,12 @@ form {
 }
 
 .picker__date-display {
-	background-color: #cfd8dc;
+	background-color: #778aaf;
 	color: black;
 }
 
 div.picker__day.picker__day--infocus.picker__day--selected.picker__day--highlighted {
-        background-color: #cfd8dc;
+        background-color: #778aaf;
     }
 
     button.picker__today, button.picker__close {
@@ -50,13 +50,51 @@ div.picker__day.picker__day--infocus.picker__day--selected.picker__day--highligh
 }
 
 #musicIcon{
-	margin: 10px;
+	margin: 15px;
+	width: 300px;
+	border-radius: 10px;
 }
 
 #fashionIcon{
-	margin: 10px;
+	margin: 15px;
+	width: 300px;
+	border-radius: 10px;
 }
 
 #foodIcon{
-	margin: 10px;
+	margin: 15px;
+	width: 300px;
+	border-radius: 10px;
 }
+
+.birthday-display {
+	text-align: center;
+	margin-top: 0px;
+	padding-top: 0px;
+}
+
+#results-page {
+	margin-left: auto; 
+	margin-right: auto; 
+	text-align: center;
+
+}
+
+#music-page {
+	margin-left: auto; 
+	margin-right: auto; 
+	text-align: center;
+}
+
+#fashions-page {
+	margin-left: auto; 
+	margin-right: auto; 
+	text-align: center;
+}
+
+#foods-page {
+	margin-left: auto; 
+	margin-right: auto; 
+	text-align: center;
+}
+
