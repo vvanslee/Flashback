@@ -5,6 +5,7 @@ var ytID;
 
 $(document).ready(function() {	
 
+
  	// animated logo 
 	var logo = $(".logo");
     TweenMax.to(logo, 0.5, { y:"-15", repeat:-1, yoyo:true});
@@ -42,7 +43,7 @@ $(document).ready(function() {
 			$("#error-modal").html("Please enter a valid birth date.");
 			$("#error-modal").fadeOut(3000);
 		} else {
-			$("form").hide();
+			$("#homepage").hide();
 			$("#results-page").show();
 			$(".birthday-display").html(birthday);
 			$(".toplogo").show();
@@ -56,7 +57,7 @@ $(document).ready(function() {
 
 	// MUSIC ICON
 
-	var musicURL = "http://www.alfano.com/wp-content/uploads/2014/04/opus-portfolio-placeholder-300x300.png"
+	var musicURL = "assets/images/music.png"
 	var musicDiv = $("<img>");
 
 	musicDiv.attr("src", musicURL);
@@ -68,7 +69,7 @@ $(document).ready(function() {
 
 	// FASHION ICON
 
-	var fashionURL = "http://www.alfano.com/wp-content/uploads/2014/04/opus-portfolio-placeholder-300x300.png";
+	var fashionURL = "assets/images/fashion.png";
 	var fashionDiv = $("<img>");
 
 	fashionDiv.attr("src", fashionURL);
@@ -79,7 +80,7 @@ $(document).ready(function() {
 
 	// FOOD ICON
 
-	var foodURL = "http://www.alfano.com/wp-content/uploads/2014/04/opus-portfolio-placeholder-300x300.png";
+	var foodURL = "assets/images/food.png";
 	var foodDiv = $("<img>");
 
 	foodDiv.attr("src", foodURL);
@@ -95,7 +96,7 @@ $(document).ready(function() {
 	// on click opens music video page
 	$("#musicIcon").on("click", function() {
 
-		$("form").hide();
+		$("#homepage").hide();
 		$("#results-page").hide();
 		$("#music-page").show();
 		$(".birthday-display").html(birthday);
@@ -108,7 +109,7 @@ $(document).ready(function() {
 	$("#fashionIcon").on("click", function() {
 		console.log("fashion was clicked");
 
-		$("form").hide();
+		$("#homepage").hide();
 		$("#results-page").hide();
 		$("#music-page").hide();
 		$("#fashions-page").show();
@@ -123,7 +124,7 @@ $(document).ready(function() {
 	$("#foodIcon").on("click", function() {
 		console.log("food was clicked");
 
-		$("form").hide();
+		$("#homepage").hide();
 		$("#results-page").hide();
 		$("#music-page").hide();
 		$("#fashions-page").hide();
@@ -170,16 +171,16 @@ function bingAPI (category) {
 	        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","6fa4daa0986746ff9d29dc25701da10d");
 	    },
 	    type: "POST",
-	    // Request bodyconsole.log(data);
+	    
 	    data: "{body}",
 	})
 	.done(function(data) {
-	    for (var j = 0; j < 6; j++) {
-	    	$(".genres").append('<img src="' + data.value[j].thumbnailUrl + '" alt="Loading Image..." height="300" width="300">');
-			var bingDiv = $("<img>");
+	    for (var j = 0; j < 12; j++) {
+	    	$(".genres").append('<img src="' + data.value[j].thumbnailUrl + '" alt="Loading Image...">');
+	    	var bingDiv = $("<img>");
 			bingDiv.attr("src", data.value[j].thumbnailUrl);
 			bingDiv.attr("alt", "Loading...");
-			bingDiv.attr("class", "fotoramaImg");
+			bingDiv.attr("class", "bingimg");
 			
 	    }
 	})
@@ -217,7 +218,7 @@ function ytAPI (category) {
 		if (category == "music") {
 
 			var musicName = "musicID";
-			var musicDiv = $("<iframe width='560' height='315' src='https://www.youtube.com/embed/" + ytID + "' frameborder='0' allowfullscreen></iframe>");
+			var musicDiv = $("<iframe width='800' height='450' src='https://www.youtube.com/embed/" + ytID + "' frameborder='0' allowfullscreen></iframe>");
 
 			// musicDiv.attr("src", musicURL);
 			musicDiv.attr("alt", "Loading Music Video...");
