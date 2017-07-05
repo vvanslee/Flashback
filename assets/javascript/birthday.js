@@ -5,7 +5,6 @@ var ytID;
 
 $(document).ready(function() {	
 
-
  	// animated logo 
 	var logo = $(".logo");
     TweenMax.to(logo, 0.5, { y:"-15", repeat:-1, yoyo:true});
@@ -20,7 +19,6 @@ $(document).ready(function() {
         min: new Date(1899,12,01),
   		max: new Date(2015,11,31)
     });
-
 
 	console.log ("birthday = " + birthday);
 
@@ -48,7 +46,6 @@ $(document).ready(function() {
 			$(".birthday-display").html(birthday);
 			$(".toplogo").show();
 		}
-
 	});
 
 // ----------------------------------------
@@ -102,7 +99,6 @@ $(document).ready(function() {
 		$(".birthday-display").html(birthday);
 
 		ytAPI("music");
-
 	});
 
 	// on click opens fashion grid page
@@ -116,9 +112,7 @@ $(document).ready(function() {
 		$(".birthday-display").html(birthday);
 
 		bingAPI("fashion");
-
 	});
-
 
 	// on click opens food grid page
 	$("#foodIcon").on("click", function() {
@@ -132,7 +126,6 @@ $(document).ready(function() {
 		$(".birthday-display").html(birthday);
 
 		bingAPI("food");
-
 	});
 
 	//---------------------------------------------
@@ -150,12 +143,12 @@ $(document).ready(function() {
 		$("div.imageResults>img").remove();
 		$("div#musicPlaylist>iframe").remove();
 		$("#homepage").show();	
-
 	});
 
 	//---------------------------------------------
 	//                BACK BUTTON 
 	//---------------------------------------------
+
 	$("button.goback").on("click", function(){
 		$("#music-page").hide();
 		$("#fashions-page").hide();
@@ -189,13 +182,11 @@ function bingAPI (category) {
 	        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","6fa4daa0986746ff9d29dc25701da10d");
 	    },
 	    type: "POST",
-	    
 	    data: "{body}",
 	})
 	.done(function(data) {
 	    for (var j = 0; j < 12; j++) {
 	    	$(".imageResults").append('<img src="' + data.value[j].contentUrl + '" id="bingimg" alt="Loading Image...">');
-			
 	    }
 	})
 	.fail(function() {
@@ -220,7 +211,6 @@ function ytAPI (category) {
 		 type: 'GET',
 		 timeout: 5000,
 		 url: 'https://www.googleapis.com/youtube/v3/search'
-
 	})
 	.done(function(data) {
 		console.log(data);
