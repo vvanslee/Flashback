@@ -98,3 +98,8 @@ div.picker__day.picker__day--infocus.picker__day--selected.picker__day--highligh
 	text-align: center;
 }
 
+#bingimg {
+	border-radius: 10px;
+	max-width: 500px;
+	max-height: 300px;
+}

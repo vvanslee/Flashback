@@ -143,7 +143,7 @@ $(document).ready(function() {
 		$("#fashions-page").hide();
 		$("#foods-page").hide();
 		$("#results-page").show();
-		$("div.genres>img").remove();
+		$("div.imageResults>img").remove();
 		$("div#musicPlaylist>iframe").remove();
 	});
 
@@ -176,11 +176,7 @@ function bingAPI (category) {
 	})
 	.done(function(data) {
 	    for (var j = 0; j < 12; j++) {
-	    	$(".genres").append('<img src="' + data.value[j].thumbnailUrl + '" alt="Loading Image...">');
-	    	var bingDiv = $("<img>");
-			bingDiv.attr("src", data.value[j].thumbnailUrl);
-			bingDiv.attr("alt", "Loading...");
-			bingDiv.attr("class", "bingimg");
+	    	$(".imageResults").append('<img src="' + data.value[j].contentUrl + '" id="bingimg" alt="Loading Image...">');
 			
 	    }
 	})
