@@ -12,7 +12,7 @@ $(document).ready(function() {
     // datepicker popup
     $('.datepicker').pickadate({ 
     	today: '',
-    	format: 'mmmm d yyyy',
+    	format: 'mmmm dth, yyyy',
     	formatSubmit: 'mmmm/d/yyyy',
         selectMonths: true,
         selectYears: 120,
