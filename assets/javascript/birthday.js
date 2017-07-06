@@ -8,7 +8,9 @@ $(document).ready(function() {
 
  	// animated logo 
 	var logo = $(".logo");
-    TweenMax.to(logo, 0.5, { y:"-15", repeat:-1, yoyo:true});
+    	TweenMax.to(logo, 0.5, { y:"-15", repeat:-1, yoyo:true});
+
+
 
     // datepicker popup
     $('.datepicker').pickadate({ 
@@ -24,7 +26,10 @@ $(document).ready(function() {
 
 	console.log ("birthday = " + birthday);
 
+
+
 	$("form").submit(function(event){
+
 		event.preventDefault();
 
 		birthday = $("input[name='birthday']").val(),
@@ -42,7 +47,8 @@ $(document).ready(function() {
 			$("#error-modal").show();
 			$("#error-modal").html("Please enter a valid birth date.");
 			$("#error-modal").fadeOut(3000);
-		} else {
+		} else { 
+
 			$("#homepage").hide();
 			$("#results-page").show();
 			$(".birthday-display").html(birthday);
@@ -138,7 +144,7 @@ $(document).ready(function() {
 	//---------------------------------------------
 	//                BACK BUTTON 
 	//---------------------------------------------
-	$("button.goback").on("click", function(){
+	$("button#goback").on("click", function(){
 		$("#music-page").hide();
 		$("#fashions-page").hide();
 		$("#foods-page").hide();
