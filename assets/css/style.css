@@ -29,12 +29,15 @@ form {
 }
 
 .picker__date-display {
-	background-color: #778aaf;
+	background-color: #cfd8dc;
 	color: black;
+}
+.picker__year-display {
+	color: #000000;
 }
 
 div.picker__day.picker__day--infocus.picker__day--selected.picker__day--highlighted {
-        background-color: #778aaf;
+        background-color: #cfd8dc;
     }
 
 button.picker__today, button.picker__close {
@@ -71,6 +74,7 @@ button.picker__today, button.picker__close {
 	text-align: center;
 	margin-top: 0px;
 	padding-top: 0px;
+	font-family: 'Special Elite', cursive;
 }
 
 #results-page {
