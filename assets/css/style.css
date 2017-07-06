@@ -9,7 +9,8 @@ form {
 }
 
 .toplogo {
-    width: 120px;
+    width: 300px;
+    margin-left: 20px;
 }
 
 #inputCard {
