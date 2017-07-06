@@ -56,18 +56,24 @@ button.picker__today, button.picker__close {
 	margin: 15px;
 	width: 300px;
 	border-radius: 10px;
+	animation-duration: 1s;
+	animation-delay: 0s;
 }
 
 #fashionIcon{
 	margin: 15px;
 	width: 300px;
 	border-radius: 10px;
+	animation-duration: 1s;
+	animation-delay: .5s;
 }
 
 #foodIcon{
 	margin: 15px;
 	width: 300px;
 	border-radius: 10px;
+	animation-duration: 1s;
+	animation-delay: 1s;
 }
 
 .birthday-display {
