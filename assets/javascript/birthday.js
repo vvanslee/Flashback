@@ -17,7 +17,7 @@ $(document).ready(function() {
         selectMonths: true,
         selectYears: 120,
         min: new Date(1899,12,01),
-  		max: new Date(2015,11,31)
+  		max: new Date(2016,11,31)
     });
 
 	console.log ("birthday = " + birthday);
