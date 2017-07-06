@@ -9,8 +9,6 @@ $(document).ready(function() {
 	var logo = $(".logo");
     	TweenMax.to(logo, 0.5, { y:"-15", repeat:-1, yoyo:true});
 
-
-
     // datepicker popup
     $('.datepicker').pickadate({ 
     	today: '',
@@ -23,8 +21,6 @@ $(document).ready(function() {
     });
 
 	console.log ("birthday = " + birthday);
-
-
 
 	$("form").submit(function(event){
 
@@ -69,7 +65,6 @@ $(document).ready(function() {
 
 	$("#icons").append(musicDiv);
 
-
 	// FASHION ICON
 
 	var fashionURL = "assets/images/fashion.png";
@@ -109,7 +104,6 @@ $(document).ready(function() {
 
 	// on click opens fashion grid page
 	$("#fashionIcon").on("click", function() {
-		console.log("fashion was clicked");
 
 		$("#homepage").hide();
 		$("#results-page").hide();
@@ -122,7 +116,6 @@ $(document).ready(function() {
 
 	// on click opens food grid page
 	$("#foodIcon").on("click", function() {
-		console.log("food was clicked");
 
 		$("#homepage").hide();
 		$("#results-page").hide();
@@ -139,7 +132,6 @@ $(document).ready(function() {
 	//---------------------------------------------
 
 	$(".toplogo").on("click", function() {
-		console.log("Return to Homepage");
 
 		$("#music-page").hide();
 		$("#fashions-page").hide();
@@ -178,9 +170,6 @@ function bingAPI (category) {
 	    "q": searchDecade + " " + category,
 	};
 	
-	//console.log(category);
-	console.log(params.q);
-
 	$.ajax({
 	    url: "https://api.cognitive.microsoft.com/bing/v5.0/images/search?" + $.param(params),
 	    beforeSend: function(xhrObj){
@@ -231,7 +220,6 @@ function ytAPI (category) {
 			var musicName = "musicID";
 			var musicDiv = $("<iframe width='800' height='450' src='https://www.youtube.com/embed/" + ytID + "' frameborder='0' allowfullscreen></iframe>");
 
-			// musicDiv.attr("src", musicURL);
 			musicDiv.attr("alt", "Loading Music Video...");
 			musicDiv.attr("id", musicName);
 
