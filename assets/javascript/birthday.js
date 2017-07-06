@@ -9,6 +9,8 @@ $(document).ready(function() {
 	var logo = $(".logo");
     	TweenMax.to(logo, 0.5, { y:"-15", repeat:-1, yoyo:true});
 
+    $(".toplogo").css('cursor', 'pointer');
+
     // datepicker popup
     $('.datepicker').pickadate({ 
     	today: '',
@@ -62,8 +64,10 @@ $(document).ready(function() {
 	musicDiv.attr("src", musicURL);
 	musicDiv.attr("alt", "Popular Music");
 	musicDiv.attr("id", "musicIcon");
+	musicDiv.attr("class", "animated pulse");
 
 	$("#icons").append(musicDiv);
+	$("#musicIcon").css('cursor', 'pointer');
 
 	// FASHION ICON
 
@@ -73,8 +77,10 @@ $(document).ready(function() {
 	fashionDiv.attr("src", fashionURL);
 	fashionDiv.attr("alt", "Popular Fashion");
 	fashionDiv.attr("id", "fashionIcon");
+	fashionDiv.attr("class", "animated pulse");
 
 	$("#icons").append(fashionDiv);
+	$("#fashionIcon").css('cursor', 'pointer');
 
 	// FOOD ICON
 
@@ -84,8 +90,10 @@ $(document).ready(function() {
 	foodDiv.attr("src", foodURL);
 	foodDiv.attr("alt", "Popular Music");
 	foodDiv.attr("id", "foodIcon");
+	foodDiv.attr("class", "animated pulse");
 
 	$("#icons").append(foodDiv);
+	$("#foodIcon").css('cursor', 'pointer');
 
 	// ----------------------------------------------
 	//                    NEXT
