@@ -7,10 +7,10 @@ An easy to use, minimal application to find inspiration for your next party base
 Demo: 
 
 <p align="center">
-	<img src="http://i.imgur.com/wEXEVks.gif" width = "550"/>
-	<img src="http://i.imgur.com/DeSRxhl.gif" width = "550"/>
-	<img src="http://i.imgur.com/8pKM1qM.gif" width = "550"/>
-	<img src="http://i.imgur.com/uGJ9YHe.gif" width = "550"/>
+	<img src="http://i.imgur.com/wEXEVks.gif" width = "750"/>
+	<img src="http://i.imgur.com/SsxPQUY.gif" width = "750"/>
+	<img src="http://i.imgur.com/CbDRbBA.gif" width = "750"/>
+	<img src="http://i.imgur.com/hhuwfPS.gif" width = "750"/>
 
 </p>
 
