@@ -57,24 +57,42 @@ button.picker__today, button.picker__close {
 	margin: 15px;
 	width: 300px;
 	border-radius: 10px;
-	animation-duration: 1s;
-	animation-delay: 0s;
+}
+
+#musicIcon:hover{
+	opacity: .8;
+}
+
+#musicIcon:active{
+	opacity: 1;
 }
 
 #fashionIcon{
 	margin: 15px;
 	width: 300px;
 	border-radius: 10px;
-	animation-duration: 1s;
-	animation-delay: .5s;
+}
+
+#fashionIcon:hover{
+	opacity: .8;
+}
+
+#fashionIcon:active{
+	opacity: 1;
 }
 
 #foodIcon{
 	margin: 15px;
 	width: 300px;
 	border-radius: 10px;
-	animation-duration: 1s;
-	animation-delay: 1s;
+}
+
+#foodIcon:hover{
+	opacity: .8;
+}
+
+#foodIcon:active{
+	opacity: 1;
 }
 
 .birthday-display {
