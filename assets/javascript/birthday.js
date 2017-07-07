@@ -14,7 +14,7 @@ $(document).ready(function() {
     // datepicker popup
     $('.datepicker').pickadate({ 
     	today: '',
-    	format: 'mmmm dth, yyyy',
+    	format: 'mmmm d, yyyy',
     	formatSubmit: 'mmmm/d/yyyy',
         selectMonths: true,
         selectYears: 120,
