@@ -32,12 +32,8 @@ $(document).ready(function() {
 		console.log ("birthday = " + birthday); 
 
 		// convert birthday into search terms
-		var tempYear = birthday.slice(-4);
-		searchYear = tempYear;
-		console.log("search year = " + searchYear);
-		var tempDecade = searchYear.slice(0,3) + "0's";
-		searchDecade = tempDecade;
-		console.log("search decade = " + searchDecade);
+		searchYear = birthday.slice(-4);
+		searchDecade = searchYear.slice(0,3) + "0's";
 
 		if (birthday === "" || birthday === undefined || birthday === null) {
 			$("#error-modal").show();
