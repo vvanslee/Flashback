@@ -176,7 +176,7 @@ function bingAPI (category) {
 	};
 	
 	$.ajax({
-	    url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?" + $.param(params),
+	    url: "https://api.cognitive.microsoft.com/bing/v5.0/images/search?" + $.param(params),
 	    beforeSend: function(xhrObj){
 	        // Request headers
 	        xhrObj.setRequestHeader("Content-Type","multipart/form-data");
