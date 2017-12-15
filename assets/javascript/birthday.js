@@ -176,11 +176,11 @@ function bingAPI (category) {
 	};
 	
 	$.ajax({
-	    url: "https://api.cognitive.microsoft.com/bing/v7.0/images/search?" + $.param(params),
+	    url: "https://api.cognitive.microsoft.com/bing/v5.0/images/search?" + $.param(params),
 	    beforeSend: function(xhrObj){
 	        // Request headers
 	        xhrObj.setRequestHeader("Content-Type","multipart/form-data");
-	        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","e68f8e0c61264992a8f674924534a370");
+	        xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","6fa4daa0986746ff9d29dc25701da10d");
 	    },
 	    type: "POST",
 	    data: "{body}",
